@@ -1,0 +1,23 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: linear-gradient(to right, #54138B , #A53692);
+}
+
+.conteiner-conteudo{
+    position: relative;
+    top: 10rem;
+    margin: auto;
+    width: 60rem;
+    height: 60rem;
+    background-color: transparent;
+}
+
+.card{
+    margin: 1rem;
+    float: left;
+}

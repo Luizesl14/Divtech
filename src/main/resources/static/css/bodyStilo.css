@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: linear-gradient(to right, #54138B , #A53692);
+}
+
+.apresentacao{
+    float: left;
+    width: 50%;
+    height: 60rem;
+}
+.text-apresentacao{
+    width: 50%;
+    position: relative;
+    top: 28rem;
+    margin: auto;
+
+}
+.center{
+    position: relative;
+    left: 120px;
+}
+
+.img-apresentaco{
+    float: right;
+    width: 50%;
+    height: 60rem;
+    
+}
+.maquina-votacao{
+    width: 50rem;
+    position: relative;
+    top: 10rem;
+}
+
+.painelcadastro{
+    width: 60rem;
+    height: 40rem;
+    background-color: #A53692;
+    margin: auto;
+    position: relative;
+    top: 7rem;
+}
+
