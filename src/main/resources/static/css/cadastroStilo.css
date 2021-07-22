@@ -99,6 +99,24 @@ p{
     color: #54138B;
 }
 
+.btnVotar{
+    padding: 5px;
+    margin-top: 20px;
+    width: 250px;
+}
+.stiloNone, select{
+    font-size: 23px;
+    text-align: center;
+    border-bottom: none;
+    outline: 0;
+}
+
+.stiloNone:hover{
+    text-align: center;
+    border-bottom: none;
+    outline: 0;
+}
+
 
 
 

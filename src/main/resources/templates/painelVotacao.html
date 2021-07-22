@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/navStilo.css">
     <link rel="stylesheet" href="css/votacaoStilo.css">
+    <link rel="stylesheet" href="css/cadastroStilo.css">
+
 
 
     <title>Votação</title>
@@ -30,8 +32,9 @@
         </div>
        
         <div class="container-btn">
-        <button class="btn btn-outline-light">Home</button>
-        <button class="btn btn-outline-light">Sair</button>
+            <button class="btn btn-warning"><a href="/" class="text-dark">Home</a></button>
+            <button class="btn btn-warning"><a href="/cadastroUser" class="text-dark">Cadastre-se</a></button>
+            <button class="btn btn-warning"><a href="/" class="text-dark">Sair</a></button>
         </div>
        
     </nav>
@@ -40,29 +43,46 @@
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                   <h5 class="card-title text-center">Empreendimento 01</h5>
-                  <img class="card-img-top" src="img/01.jpg" alt="Card image cap">
-                  <p class="card-text text-center">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Vote Aqui!</a>
+                  <img class="card-img-top" src="../img/01.jpg" alt="Card image cap">
+                    <form method="post">
+                        <input  class="stilo-input stiloNone" type="text" name="nome" placeholder="Le Jardim" value="Le Jardim" readonly>
+                        <input class="stilo-input stiloNone display-none"  type="text" name="voto" placeholder=" Valor 01 voto" value="1" required>
+                        <button  class="btn btn-outline-dark btnVotar" type="submit">Votar</button>
+                    </form>
+
                 </div>
               </div>
 
-              <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                  <h5 class="card-title text-center">Empreendimento 02</h5>
-                  <img class="card-img-top" src="img/02.jpg"" alt="Card image cap">
-                  <p class="card-text text-center">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Vote Aqui!</a>
-                </div>
-              </div>
+                    <h5 class="card-title text-center">Empreendimento 02</h5>
+                    <img class="card-img-top" src="../img/02.jpg" alt="Card image cap">
+                    <form method="post">
+                        <input  class="stilo-input stiloNone" type="text" name="nome" placeholder="Evian" value="Evian" readonly>
+                        <input class="stilo-input stiloNone display-none"  type="text" name="voto" placeholder="Valor 01 voto" value="1" required>
+                        <button  class="btn btn-outline-dark btnVotar" type="submit">Votar</button>
+                    </form>
 
-              <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title text-center">Empreendimento 03</h5>
-                  <img class="card-img-top" src="img/03.jpg"" alt="Card image cap">
-                  <p class="card-text text-center">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Vote Aqui!</a>
                 </div>
-              </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Empreendimento 03</h5>
+                    <img class="card-img-top" src="../img/03.jpg" alt="Card image cap">
+                    <form method="post">
+                        <input  class="stilo-input stiloNone" type="text" name="nome" placeholder="Olimpia Thermas" value="Olimpia Thermas" readonly>
+                        <input class="stilo-input stiloNone display-none"  type="text" name="voto" placeholder="Valor 01 voto" value="1" required>
+                        <button  class="btn btn-outline-dark btnVotar" type="submit">Votar</button>
+                    </form>
+
+                </div>
+            </div>
+
+
+
+
+
         </section>
         
     </div>

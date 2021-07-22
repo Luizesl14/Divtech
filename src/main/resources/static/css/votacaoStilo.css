@@ -13,11 +13,27 @@ body{
     top: 10rem;
     margin: auto;
     width: 60rem;
-    height: 60rem;
+    height: 25rem;
     background-color: transparent;
 }
 
 .card{
     margin: 1rem;
     float: left;
+}
+
+.tebelaContainer{
+
+    width: 60rem;
+    height: 20rem;
+    position: relative;
+    padding: 30px;
+    margin: auto;
+    margin-top: 12rem;
+    background-color: white;
+    border-right: 5px;
+}
+
+.display-none{
+    display: none;
 }
