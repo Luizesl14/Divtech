@@ -10,6 +10,11 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.stereotype.Service;
 
 import javax.sql.DataSource;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 @Configuration
 public class DBService {
@@ -18,27 +23,15 @@ public class DBService {
     }
 
     @Bean
-    public DataSource dataSource(){
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("un0jueuv2mam78uv.cbetxkdyhwsb.us-east-1.rds.amazonaws.com");
-        dataSource.setUsername("kyp8fa5n54rc5xnf");
-        dataSource.setPassword("eh906xek04el4mop");
-        return dataSource;
-    }
+    private static Connection getConnection() throws URISyntaxException, SQLException {
+        URI jdbUri = new URI(System.getenv("JAWSDB_URL"));
 
+        String username = jdbUri.getUserInfo().split(":")[0];
+        String password = jdbUri.getUserInfo().split(":")[1];
+        String port = String.valueOf(jdbUri.getPort());
+        String jdbUrl = "jdbc:mysql://" + jdbUri.getHost() + ":" + port + jdbUri.getPath();
 
-
-
-    @Bean
-    public JpaVendorAdapter jpaVendorAdapter(){
-        HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
-        adapter.setDatabase(Database.MYSQL);
-        adapter.setShowSql(true);
-        adapter.setGenerateDdl(true);
-        adapter.setDatabasePlatform("org.hibernate.dialect.MySQL5Dialect");
-        adapter.setPrepareConnection(true);
-        return adapter;
+        return DriverManager.getConnection(jdbUrl, username, password);
     }
 
 
