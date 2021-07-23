@@ -15,69 +15,69 @@
     <title>CPainel</title>
 </head>
 <body>
-    
-    <!--Barra de Navegação-->
-    <nav class="navbar navbar-dark bg-dark">
-        
-        <div class="container-logo">
-            <div class="divtech-logo">
-                <img class="logotipo" src="img/logotipo-light.svg" alt="DevTech">
-            </div>
-            
-            <div class="divtech-marca">
-                <p class="display-5 text-light">DivTech</p>
-            </div>
+
+<!--Barra de Navegação-->
+<nav class="navbar navbar-dark bg-dark">
+
+    <div class="container-logo">
+        <div class="divtech-logo">
+            <img class="logotipo" src="img/logotipo-light.svg" alt="DevTech">
         </div>
-       
-        <div class="container-btn">
-            <button class="btn btn-warning"><a href="/" class="text-dark">Sair</a></button>
+
+        <div class="divtech-marca">
+            <p class="display-5 text-light">DivTech</p>
         </div>
-       
-    </nav>
-    <div class="conteiner-conteudo">
-        <section class="apresentacao">
-            <div class="card" >
-                <div class="card-body">
-                  <h5 class="card-title text-center">Le Jardins</h5>
-                  <p class="card-text text-center">Numero de Votos:</p>
-                    <div th:each="evento : ${listarVotos1}" >
-                        <h1 class="display-2 text-center"th:text="${evento.voto}"></h1>
-                    </div>
-                    <p class="card-text text-center">Empreendimento 5 Estrelas</p>
-                  <a href="#" class="btn btn-primary">Zerar</a>
-                </div>
-              </div>
-
-              <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title text-center">Evian</h5>
-                  <p class="card-text text-center">Numero de Votos:</p>
-                    <div th:each="evento : ${listarVotos2}" >
-                        <h1 class="display-2 text-center"th:text="${evento.voto}"></h1>
-                    </div>
-                    <p class="card-text text-center">Empreendimento 5 Estrelas</p>
-                  <a href="#" class="btn btn-primary">Zerar</a>
-                </div>
-              </div>
-
-              <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title text-center">Olimpia Thermas</h5>
-                  <p class="card-text text-center">Numero de Votos:</p>
-                    <div th:each="evento : ${listarVotos3}" >
-                        <h1 class="display-2 text-center"th:text="${evento.voto}"></h1>
-                    </div>
-                  <p class="card-text text-center">Empreendimento 5 Estrelas</p>
-                  <a href="#" class="btn btn-primary">Zerar</a>
-                </div>
-              </div>
-
-        </section>
-        
     </div>
 
-    <div class="tebelaContainer">
-    <div class="container table-overflow" width="100%" >
+    <div class="container-btn">
+        <button class="btn btn-warning"><a href="/" class="text-dark">Sair</a></button>
+    </div>
+
+</nav>
+<div class="conteiner-conteudo">
+    <section class="apresentacao">
+        <div class="card" >
+            <div class="card-body">
+                <h5 class="card-title text-center">Le Jardins</h5>
+                <p class="card-text text-center">Numero de Votos:</p>
+                <div th:each="evento : ${listarVotos1}" >
+                    <h1 class="display-2 text-center"th:text="${evento.voto}"></h1>
+                </div>
+                <p class="card-text text-center">Empreendimento 5 Estrelas</p>
+                <a href="#" class="btn btn-primary">Zerar</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Evian</h5>
+                <p class="card-text text-center">Numero de Votos:</p>
+                <div th:each="evento : ${listarVotos2}" >
+                    <h1 class="display-2 text-center"th:text="${evento.voto}"></h1>
+                </div>
+                <p class="card-text text-center">Empreendimento 5 Estrelas</p>
+                <a href="#" class="btn btn-primary">Zerar</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Olimpia Thermas</h5>
+                <p class="card-text text-center">Numero de Votos:</p>
+                <div th:each="evento : ${listarVotos3}" >
+                    <h1 class="display-2 text-center"th:text="${evento.voto}"></h1>
+                </div>
+                <p class="card-text text-center">Empreendimento 5 Estrelas</p>
+                <a href="#" class="btn btn-primary">Zerar</a>
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+<div class="tebelaContainer barScroll">
+    <div class="container table-overflow " width="100%" >
         <p class="display-6 text-center">Usuarios</p>
         <table class="table table-striped table-bordered table-sm table-light " cellspacing="0" width="100%">
             <thead>
@@ -100,8 +100,8 @@
         </table>
     </div>
 
-    </div>
+</div>
 
-    
+
 </body>
 </html>
