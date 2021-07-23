@@ -7,6 +7,7 @@ import com.div_tech.repository.EmpreendimentoRepository;
 import com.div_tech.repository.UsuarioApiRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -20,6 +21,9 @@ public class Servicos {
     EmpreendimentoRepository emr;
     @Autowired
     UsuarioApiRepository uapi;
+
+    @Autowired
+    Controller con;
 
     // retorna login
     public String formLgService(UsuarioApi user){

@@ -23,6 +23,7 @@ public class controller {
         return "index";
     }
 
+
     // injecao de dependencia
     @Autowired
     private UsuarioApiRepository usuarioApiRepository;
@@ -72,12 +73,15 @@ public class controller {
         return servicos.formLgService(user);
     }
 
-    @RequestMapping("/controle")
-    public String cpainel(){ return "cpainel";}
+        @RequestMapping("/controle")
+        public String cpainel(){
+        return "cpainel";
+        }
+
 
 
     // Exibe as informacoes no  Painel de Controle
-    @GetMapping("/controle")
+    @RequestMapping("/controle")
     public ModelAndView listaEventos(){
         return servicos.exibir();
     }
