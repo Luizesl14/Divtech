@@ -17,13 +17,15 @@ public class DBService {
     public DBService(){
     }
 
+    // mysql://b82cfabc16a20a:e70c248d@us-cdbr-east-04.cleardb.com/heroku_c5c6e6eddd9e519?reconnect=true
+
     @Bean
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://u3r5w4ayhxzdrw87.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/c7mceszcv3nk3ocd");
-        dataSource.setUsername("xudirjirf89b689z");
-        dataSource.setPassword("viupekvrmd6q8uvl");
+        dataSource.setUrl("jdbc:mysql://us-cdbr-east-04.cleardb.com:3306/heroku_c5c6e6eddd9e519");
+        dataSource.setUsername("b82cfabc16a20a");
+        dataSource.setPassword("e70c248d");
         return dataSource;
     }
 

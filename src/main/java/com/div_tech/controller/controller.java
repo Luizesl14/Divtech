@@ -18,6 +18,11 @@ import java.util.List;
 @Controller
 public class controller {
 
+    @RequestMapping("/")
+    public String homePage(){
+        return "index";
+    }
+
     // injecao de dependencia
     @Autowired
     private UsuarioApiRepository usuarioApiRepository;
