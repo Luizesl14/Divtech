@@ -1,6 +1,7 @@
 package com.div_tech;
 
 import ch.qos.logback.core.db.DriverManagerConnectionSource;
+import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -19,34 +20,21 @@ import java.sql.SQLException;
 @Configuration
 public class DBService {
 
-    public DBService(){
-    }
-
-    private static Connection getConnection() throws URISyntaxException, SQLException {
-        URI jdbUri = new URI(System.getenv("JAWSDB_URL"));
-
-        String username = jdbUri.getUserInfo().split(":")[0];
-        String password = jdbUri.getUserInfo().split(":")[1];
-        String port = String.valueOf(jdbUri.getPort());
-        String jdbUrl = "jdbc:mysql://" + jdbUri.getHost() + ":" + port + jdbUri.getPath();
-
-        return DriverManager.getConnection(jdbUrl, username, password);
-    }
-
-
-
-
     @Bean
-    public JpaVendorAdapter jpaVendorAdapter(){
-        HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
-        adapter.setDatabase(Database.MYSQL);
-        adapter.setShowSql(true);
-        adapter.setGenerateDdl(true);
-        adapter.setDatabasePlatform("org.hibernate.dialect.MySQL5Dialect");
-        adapter.setPrepareConnection(true);
-        return adapter;
-    }
+    public BasicDataSource dataSource() throws URISyntaxException {
+        URI dbUri = new URI(System.getenv("DATABASE_URL"));
 
+        String username = dbUri.getUserInfo().split(":")[0];
+        String password = dbUri.getUserInfo().split(":")[1];
+        String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath() + "?sslmode=require";
+
+        BasicDataSource basicDataSource = new BasicDataSource();
+        basicDataSource.setUrl(dbUrl);
+        basicDataSource.setUsername(username);
+        basicDataSource.setPassword(password);
+
+        return basicDataSource;
+    }
 
 
 }
