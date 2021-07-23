@@ -73,15 +73,10 @@ public class controller {
         return servicos.formLgService(user);
     }
 
-        @RequestMapping("/controle")
-        public String cpainel(){
-        return "cpainel";
-        }
-
 
 
     // Exibe as informacoes no  Painel de Controle
-    @RequestMapping("/controle")
+    @GetMapping("/controle")
     public ModelAndView listaEventos(){
         return servicos.exibir();
     }
