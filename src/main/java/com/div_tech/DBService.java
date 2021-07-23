@@ -22,7 +22,6 @@ public class DBService {
     public DBService(){
     }
 
-    @Bean
     private static Connection getConnection() throws URISyntaxException, SQLException {
         URI jdbUri = new URI(System.getenv("JAWSDB_URL"));
 
@@ -32,6 +31,20 @@ public class DBService {
         String jdbUrl = "jdbc:mysql://" + jdbUri.getHost() + ":" + port + jdbUri.getPath();
 
         return DriverManager.getConnection(jdbUrl, username, password);
+    }
+
+
+
+
+    @Bean
+    public JpaVendorAdapter jpaVendorAdapter(){
+        HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
+        adapter.setDatabase(Database.MYSQL);
+        adapter.setShowSql(true);
+        adapter.setGenerateDdl(true);
+        adapter.setDatabasePlatform("org.hibernate.dialect.MySQL5Dialect");
+        adapter.setPrepareConnection(true);
+        return adapter;
     }
 
 
