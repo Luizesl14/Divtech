@@ -21,9 +21,9 @@ public class DBService {
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/apitech");
-        dataSource.setUsername("root");
-        dataSource.setPassword("12345");
+        dataSource.setUrl("un0jueuv2mam78uv.cbetxkdyhwsb.us-east-1.rds.amazonaws.com");
+        dataSource.setUsername("kyp8fa5n54rc5xnf");
+        dataSource.setPassword("eh906xek04el4mop");
         return dataSource;
     }
 
