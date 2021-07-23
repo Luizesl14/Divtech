@@ -22,8 +22,6 @@ public class Servicos {
     @Autowired
     UsuarioApiRepository uapi;
 
-    @Autowired
-    Controller con;
 
     // retorna login
     public String formLgService(UsuarioApi user){
