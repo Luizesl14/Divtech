@@ -23,9 +23,9 @@ public class DBService {
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://us-cdbr-east-04.cleardb.com:3306/heroku_c5c6e6eddd9e519");
-        dataSource.setUsername("b82cfabc16a20a");
-        dataSource.setPassword("e70c248d");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/apitech");
+        dataSource.setUsername("root");
+        dataSource.setPassword("12345");
         return dataSource;
     }
 
